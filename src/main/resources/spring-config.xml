@@ -13,6 +13,15 @@
         <property name="password" value="123" />
     </bean>
 
+    <bean id="namedParameterJdbcTemplate" class="org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate">
+        <constructor-arg name="dataSource" ref="dataSource" />
+    </bean>
+
+    <bean id="categoryDao" class="com.thoughtworks.pos.dao.impl.CategoryDaoImpl">
+        <constructor-arg name="dataSource" ref="dataSource" />
+        <constructor-arg name="namedParameterJdbcTemplate" ref="namedParameterJdbcTemplate" />
+    </bean>
+
     <bean id="scanner" class="com.thoughtworks.pos.util.Scanner"></bean>
     <bean id="pos" class="com.thoughtworks.pos.Pos"></bean>
 </beans>
