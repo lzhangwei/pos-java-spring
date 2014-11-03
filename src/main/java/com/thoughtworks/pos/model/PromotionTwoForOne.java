@@ -1,4 +1,4 @@
 package com.thoughtworks.pos.model;
 
-public class PromotionTwoForOne {
+public class PromotionTwoForOne extends Promotion{
 }
