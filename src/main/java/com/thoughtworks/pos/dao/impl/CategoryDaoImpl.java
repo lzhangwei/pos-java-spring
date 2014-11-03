@@ -46,10 +46,10 @@ public class CategoryDaoImpl implements CategoryDao, InitializingBean{
     private static final class CategoryMapper implements RowMapper<Category> {
         @Override
         public Category mapRow(ResultSet rs, int rowNum) throws SQLException {
-            Category contact = new Category();
-            contact.setId(rs.getInt("id"));
-            contact.setName(rs.getString("name"));
-            return contact;
+            Category category = new Category();
+            category.setId(rs.getInt("id"));
+            category.setName(rs.getString("name"));
+            return category;
         }
     }
 }
