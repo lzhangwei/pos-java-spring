@@ -27,6 +27,11 @@
         <constructor-arg name="namedParameterJdbcTemplate" ref="namedParameterJdbcTemplate" />
     </bean>
 
+    <bean id="promotionDao" class="com.thoughtworks.pos.dao.impl.PromotionDaoImpl">
+        <constructor-arg name="dataSource" ref="dataSource" />
+        <constructor-arg name="namedParameterJdbcTemplate" ref="namedParameterJdbcTemplate" />
+    </bean>
+
     <bean id="scanner" class="com.thoughtworks.pos.util.Scanner"></bean>
     <bean id="pos" class="com.thoughtworks.pos.Pos"></bean>
 </beans>
