@@ -1,7 +1,6 @@
 package com.thoughtworks.pos.dao.impl;
 
 import com.thoughtworks.pos.dao.PromotionDao;
-import com.thoughtworks.pos.model.Category;
 import com.thoughtworks.pos.model.Promotion;
 import com.thoughtworks.pos.model.PromotionFactory;
 import org.springframework.beans.factory.BeanCreationException;
