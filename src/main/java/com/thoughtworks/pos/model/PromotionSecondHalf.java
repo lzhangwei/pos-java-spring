@@ -2,7 +2,7 @@ package com.thoughtworks.pos.model;
 
 public class PromotionSecondHalf extends Promotion{
     @Override
-    public double caculatePromotionPrice(Item item, double num) {
+    public double caculatePromotionPrice(CartItem cartItem) {
         return 0;
     }
 }

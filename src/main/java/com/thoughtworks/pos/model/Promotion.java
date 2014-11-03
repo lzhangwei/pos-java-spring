@@ -5,5 +5,5 @@ public abstract class Promotion {
     private String promotionDesc;
     private int type;
 
-    public abstract double caculatePromotionPrice(Item item, double num);
+    public abstract double caculatePromotionPrice(CartItem cartItem);
 }
