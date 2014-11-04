@@ -38,10 +38,9 @@
         <constructor-arg name="promotionDao" ref="promotionDao" />
     </bean>
 
-    <bean id="posService" class="com.thoughtworks.pos.Pos">
+    <bean id="pos" class="com.thoughtworks.pos.Pos">
         <property name="itemService" ref="itemService" />
     </bean>
 
     <bean id="scanner" class="com.thoughtworks.pos.util.Scanner"></bean>
-    <bean id="pos" class="com.thoughtworks.pos.Pos"></bean>
 </beans>
