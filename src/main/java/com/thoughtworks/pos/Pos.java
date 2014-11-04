@@ -13,11 +13,19 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Pos {
-    private List<Item> items = new ArrayList<Item>();
-    private List<CartItem> cartItems = new ArrayList<CartItem>();
+    private List<Item> items;
+    private List<CartItem> cartItems;
     private double sumPrice;
     private double promotionPrice;
     private ItemService itemService;
+
+    public void setItems(List<Item> items) {
+        this.items = items;
+    }
+
+    public void setCartItems(List<CartItem> cartItems) {
+        this.cartItems = cartItems;
+    }
 
     public void setItemService(ItemService itemService) {
         this.itemService = itemService;
