@@ -17,4 +17,12 @@ public class CategoryList {
     public void addCartItem(CartItem cartItem) {
         cartItemList.add(cartItem);
     }
+    
+    public String getCategoryName() {
+        return category.getName();
+    }
+
+    public List<CartItem> getCartItemList() {
+        return cartItemList;
+    }
 }
