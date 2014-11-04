@@ -1,6 +1,9 @@
 package com.thoughtworks.pos;
 
+import com.thoughtworks.pos.dao.CategoryDao;
+import com.thoughtworks.pos.dao.impl.CategoryDaoImpl;
 import com.thoughtworks.pos.model.CartItem;
+import com.thoughtworks.pos.model.Category;
 import com.thoughtworks.pos.model.CategoryList;
 import com.thoughtworks.pos.util.Scanner;
 import org.springframework.context.ApplicationContext;
@@ -48,6 +51,20 @@ public class PosApp {
 
     private static String creatItemPrint(Pos pos) {
         String result = "";
+        List<CategoryList> categoryLists = pos.createCategoryLists();
+        DecimalFormat df = new DecimalFormat("0.00");
+        for(CategoryList categoryList : categoryLists) {
+            result += categoryList.getCategoryName() + "类：\n";
+            List<CartItem> cartItems = categoryList.getCartItemList();
+            for (int i = 0; i < cartItems.size(); i++) {
+                result += "名称：" + cartItems.get(i).getItemName() + ",";
+                result += "数量：" + df.format(cartItems.get(i).getNum()) + ",";
+                result += "单价：" + df.format(cartItems.get(i).getItem().getPrice()) + ",";
+                result += "单位：" + cartItems.get(i).getItemUnit() + ",";
+                result += "小计：" + df.format(cartItems.get(i).getSumPrice()) + ",";
+                result += "优惠金额：" + df.format(cartItems.get(i).getPromotionPrice()) + "\n";
+            }
+        }
 
         return result;
     }

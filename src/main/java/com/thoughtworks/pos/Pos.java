@@ -10,8 +10,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Pos {
-    private List<Item> items;
-    private List<CartItem> cartItems;
+    private List<Item> items = new ArrayList<Item>();
+    private List<CartItem> cartItems = new ArrayList<CartItem>();
     private double sumPrice;
     private double promotionPrice;
     private ItemService itemService;
