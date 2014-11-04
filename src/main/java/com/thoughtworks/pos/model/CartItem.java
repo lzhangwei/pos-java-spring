@@ -37,6 +37,10 @@ public class CartItem {
         return promotionPrice;
     }
 
+    public Item getItem() {
+        return item;
+    }
+
     public void setPromotionPrice(double promotionPrice) {
         this.promotionPrice = promotionPrice;
     }
@@ -68,5 +72,13 @@ public class CartItem {
 
     public int getDiscount() {
         return item.getDiscount();
+    }
+
+    public String getItemName() {
+        return item.getName();
+    }
+
+    public String getItemUnit() {
+        return item.getUnit();
     }
 }
