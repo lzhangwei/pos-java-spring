@@ -68,6 +68,14 @@ public class Item {
         return category;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public String getUnit() {
+        return unit;
+    }
+
     public int getDiscount() {
         return discount;
     }
