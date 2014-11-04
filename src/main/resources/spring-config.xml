@@ -32,6 +32,12 @@
         <constructor-arg name="namedParameterJdbcTemplate" ref="namedParameterJdbcTemplate" />
     </bean>
 
+    <bean id="itemService" class="com.thoughtworks.pos.service.ItemServiceImpl">
+        <constructor-arg name="categoryDao" ref="categoryDao" />
+        <constructor-arg name="itemDao" ref="itemDao" />
+        <constructor-arg name="promotionDao" ref="promotionDao" />
+    </bean>
+
     <bean id="scanner" class="com.thoughtworks.pos.util.Scanner"></bean>
     <bean id="pos" class="com.thoughtworks.pos.Pos"></bean>
 </beans>
