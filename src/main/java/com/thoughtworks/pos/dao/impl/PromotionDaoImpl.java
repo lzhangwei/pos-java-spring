@@ -37,7 +37,7 @@ public class PromotionDaoImpl implements PromotionDao, InitializingBean {
 
     @Override
     public List<Promotion> getPromotionsByItemId(int id) {
-        String sql = "SELECT * FROM items_promotions WHERE itemId = : id";
+        String sql = "SELECT type FROM items_promotions,promotions WHERE itemId=:id AND promotionId=id";
 
         Map<String, Object> namedParameters = new HashMap<String, Object>();
         namedParameters.put("id", id);
@@ -47,7 +47,7 @@ public class PromotionDaoImpl implements PromotionDao, InitializingBean {
 
     @Override
     public int getPromotionDiscount(int id) {
-        String sql = "SELECT discount FROM items_promotions WHERE itemId = : id AND promotionId=3";
+        String sql = "SELECT discount FROM items_promotions WHERE itemId=:id AND promotionId=3";
 
         Map<String, Object> namedParameters = new HashMap<String, Object>();
         namedParameters.put("id", id);
