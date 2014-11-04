@@ -7,7 +7,6 @@ import com.thoughtworks.pos.model.Category;
 import com.thoughtworks.pos.model.Item;
 import com.thoughtworks.pos.model.Promotion;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class ItemServiceImpl implements ItemService{
