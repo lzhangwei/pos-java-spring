@@ -46,7 +46,7 @@
 
     <bean id="list" class="java.util.ArrayList" scope="prototype"></bean>
 
-    <bean id="categoryList" class="com.thoughtworks.pos.model.CategoryList">
+    <bean id="categoryList" class="com.thoughtworks.pos.model.CategoryList" scope="prototype">
         <property name="cartItemList" ref="list" />
     </bean>
 
