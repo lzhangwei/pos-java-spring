@@ -51,16 +51,18 @@ public class PromotionDaoImpl implements PromotionDao, InitializingBean {
 
         Map<String, Object> namedParameters = new HashMap<String, Object>();
         namedParameters.put("id", id);
-
-        return namedParameterJdbcTemplate.query(sql, namedParameters, new PromotionDiscountMapper()).get(0);
+        List<Integer> result = namedParameterJdbcTemplate.query(sql, namedParameters, new PromotionDiscountMapper());
+        if(result.size() == 0)
+            return 100;
+        return result.get(0);
     }
 
     @Override
     public void afterPropertiesSet() throws Exception {
-        if(dataSource == null) {
+        if (dataSource == null) {
             throw new BeanCreationException("Must set DataSource on CategoryDaoImpl");
         }
-        if(namedParameterJdbcTemplate == null) {
+        if (namedParameterJdbcTemplate == null) {
             throw new BeanCreationException("Null NamedParameterJdbcTemplate on CategoryDaoImpl");
         }
     }
@@ -76,8 +78,8 @@ public class PromotionDaoImpl implements PromotionDao, InitializingBean {
     private static final class PromotionDiscountMapper implements RowMapper<Integer> {
         @Override
         public Integer mapRow(ResultSet rs, int rowNum) throws SQLException {
-            int discount = rs.getInt("discount");
-            return discount;
+            return rs.getInt("discount");
+//            return 100;
         }
     }
 }
