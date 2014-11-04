@@ -1,6 +1,7 @@
 package com.thoughtworks.pos;
 
 import com.thoughtworks.pos.model.CartItem;
+import com.thoughtworks.pos.model.Category;
 import com.thoughtworks.pos.model.CategoryList;
 import com.thoughtworks.pos.model.Item;
 import com.thoughtworks.pos.service.ItemService;
@@ -64,6 +65,21 @@ public class Pos {
     }
 
     public List<CategoryList> createCategoryLists() {
-        return null;
+        List<CategoryList> categoryLists = new ArrayList<CategoryList>();
+        for (int i = 0; i < cartItems.size(); i++) {
+            Category category = cartItems.get(i).getCategory();
+            CategoryList categoryList = new CategoryList();
+            categoryList.setCategory(category);
+            categoryList.addCartItem(cartItems.get(i));
+            for(int j=i+1;j<cartItems.size();j++) {
+                if(cartItems.get(j).getCategoryId() == category.getId()) {
+                    categoryList.addCartItem(cartItems.get(j));
+                    cartItems.remove(j);
+                    j--;
+                }
+            }
+            categoryLists.add(categoryList);
+        }
+        return categoryLists;
     }
 }
