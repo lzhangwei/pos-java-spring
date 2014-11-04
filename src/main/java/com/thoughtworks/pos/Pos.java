@@ -5,6 +5,9 @@ import com.thoughtworks.pos.model.Category;
 import com.thoughtworks.pos.model.CategoryList;
 import com.thoughtworks.pos.model.Item;
 import com.thoughtworks.pos.service.ItemService;
+import com.thoughtworks.pos.util.Scanner;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -68,7 +71,10 @@ public class Pos {
         List<CategoryList> categoryLists = new ArrayList<CategoryList>();
         for (int i = 0; i < cartItems.size(); i++) {
             Category category = cartItems.get(i).getCategory();
-            CategoryList categoryList = new CategoryList();
+
+            ApplicationContext context = new ClassPathXmlApplicationContext("spring-config.xml");
+            CategoryList categoryList = (CategoryList)context.getBean("categoryList");
+
             categoryList.setCategory(category);
             categoryList.addCartItem(cartItems.get(i));
             for(int j=i+1;j<cartItems.size();j++) {

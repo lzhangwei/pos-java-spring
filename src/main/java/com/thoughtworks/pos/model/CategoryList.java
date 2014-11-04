@@ -1,11 +1,14 @@
 package com.thoughtworks.pos.model;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class CategoryList {
     private Category category;
-    private List<CartItem> cartItemList = new ArrayList<CartItem>();
+    private List<CartItem> cartItemList;
+
+    public void setCartItemList(List<CartItem> cartItemList) {
+        this.cartItemList = cartItemList;
+    }
 
     public void setCategory(Category category) {
         this.category = category;
