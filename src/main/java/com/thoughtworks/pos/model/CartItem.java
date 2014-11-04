@@ -61,4 +61,8 @@ public class CartItem {
     public Category getCategory() {
         return item.getCategory();
     }
+
+    public int getCategoryId() {
+        return item.getCategoryId();
+    }
 }
