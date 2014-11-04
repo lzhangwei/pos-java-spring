@@ -63,4 +63,8 @@ public class Item {
     public List<Promotion> getPromotionList() {
         return promotionList;
     }
+
+    public Category getCategory() {
+        return category;
+    }
 }

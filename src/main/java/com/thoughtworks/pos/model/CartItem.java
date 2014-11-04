@@ -57,4 +57,8 @@ public class CartItem {
         }
         return result;
     }
+
+    public Category getCategory() {
+        return item.getCategory();
+    }
 }
