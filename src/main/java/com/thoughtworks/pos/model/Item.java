@@ -55,4 +55,12 @@ public class Item {
     public String getBarcode() {
         return barcode;
     }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public List<Promotion> getPromotionList() {
+        return promotionList;
+    }
 }
