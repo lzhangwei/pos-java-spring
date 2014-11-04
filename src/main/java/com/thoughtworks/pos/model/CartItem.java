@@ -65,4 +65,8 @@ public class CartItem {
     public int getCategoryId() {
         return item.getCategoryId();
     }
+
+    public int getDiscount() {
+        return item.getDiscount();
+    }
 }
