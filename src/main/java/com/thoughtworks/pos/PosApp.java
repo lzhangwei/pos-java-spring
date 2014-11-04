@@ -1,9 +1,6 @@
 package com.thoughtworks.pos;
 
-import com.thoughtworks.pos.dao.CategoryDao;
-import com.thoughtworks.pos.dao.impl.CategoryDaoImpl;
 import com.thoughtworks.pos.model.CartItem;
-import com.thoughtworks.pos.model.Category;
 import com.thoughtworks.pos.model.CategoryList;
 import com.thoughtworks.pos.util.Scanner;
 import org.springframework.context.ApplicationContext;

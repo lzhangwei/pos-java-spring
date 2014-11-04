@@ -5,7 +5,6 @@ import com.thoughtworks.pos.model.Category;
 import com.thoughtworks.pos.model.CategoryList;
 import com.thoughtworks.pos.model.Item;
 import com.thoughtworks.pos.service.ItemService;
-import com.thoughtworks.pos.util.Scanner;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
