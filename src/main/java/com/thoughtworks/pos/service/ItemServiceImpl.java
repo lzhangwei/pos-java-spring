@@ -39,7 +39,7 @@ public class ItemServiceImpl implements ItemService{
     @Override
     public Item getItemByBarcode(String barcode) {
         Item item = itemDao.getItemByBarcode(barcode);
-        item.setCategory(categoryDao.getCategoryById(item.getId()));
+        item.setCategory(categoryDao.getCategoryById(item.getCategoryId()));
         item.setPromotionList(promotionDao.getPromotionsByItemId(item.getId()));
         item.setDiscount(promotionDao.getPromotionDiscount(item.getId()));
         return item;
