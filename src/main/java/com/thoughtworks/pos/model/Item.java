@@ -47,4 +47,8 @@ public class Item {
     public int getCategoryId() {
         return category.getId();
     }
+
+    public int getId() {
+        return this.id;
+    }
 }
