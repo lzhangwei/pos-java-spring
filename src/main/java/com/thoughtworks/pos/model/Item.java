@@ -43,4 +43,8 @@ public class Item {
     public void setPromotionList(List<Promotion> promotionList) {
         this.promotionList = promotionList;
     }
+
+    public int getCategoryId() {
+        return category.getId();
+    }
 }
