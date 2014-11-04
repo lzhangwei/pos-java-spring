@@ -47,6 +47,12 @@ public class Pos {
     }
 
     public void caculatePrice() {
+        for (CartItem cartItem : cartItems) {
+            cartItem.setSumPrice(cartItem.getNum() * cartItem.getPrice());
+            cartItem.setPromotionPrice(cartItem.calculatePromotionPrice());
+            sumPrice += cartItem.getSumPrice();
+            promotionPrice += cartItem.getPromotionPrice();
+        }
     }
 
     public double getSumPrice() {
