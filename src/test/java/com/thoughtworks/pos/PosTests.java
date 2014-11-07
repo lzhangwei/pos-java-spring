@@ -49,5 +49,11 @@ public class PosTests {
         assertThat(pos.getSumPrice()).isEqualTo(69);
     }
 
-    
+    @Test
+    public void should_return_sum_price() {
+        pos.parseBarcode(barcodes);
+        pos.caculatePrice();
+        double result = pos.getSumPrice();
+        assertThat(result).isEqualTo(69);
+    }
 }
