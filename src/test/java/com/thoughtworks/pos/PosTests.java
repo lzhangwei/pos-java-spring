@@ -1,5 +1,6 @@
 package com.thoughtworks.pos;
 
+import com.thoughtworks.pos.model.CategoryList;
 import org.junit.Before;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
@@ -63,5 +64,14 @@ public class PosTests {
         pos.caculatePrice();
         double result = pos.getPromotionPrice();
         assertThat(result).isEqualTo(11.75);
+    }
+
+    @Test
+    public void should_return_category_cartItem_list() {
+        pos.parseBarcode(barcodes);
+        pos.caculatePrice();
+        List<CategoryList> result = pos.createCategoryLists();
+        assertThat(result.size()).isEqualTo(3);
+        assertThat(result.get(1).getCategoryName()).isEqualTo("水果");
     }
 }
