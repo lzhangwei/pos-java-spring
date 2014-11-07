@@ -12,6 +12,9 @@ public class Item {
     private int discount;
     private List<Promotion> promotionList;
 
+    public Item() {
+    }
+
     public Item(int id, String barcode, String name, String unit, double price, Category category, int discount, List<Promotion> promotionList) {
         this.id = id;
         this.barcode = barcode;
