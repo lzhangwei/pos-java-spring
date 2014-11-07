@@ -21,14 +21,24 @@ public class ItemServiceTests {
 
 
     @Test
-    public void get_all_items_test() {
-
+    public void get_all_items_should_return_all_Items() {
         assertThat(itemService.getItems().size()).isEqualTo(6);
         assertThat(itemService.getItems().get(1).getName()).isEqualTo("雪碧");
-        assertThat(itemService.getItems().get(1).getCategoryId()).isEqualTo(1);
-        assertThat(itemService.getItems().get(1).getDiscount()).isEqualTo(75);
-        assertThat(itemService.getItems().get(1).getPromotionList().size()).isEqualTo(3);
+    }
 
+    @Test
+    public void get_all_items_should_set_Category() {
+        assertThat(itemService.getItems().get(1).getCategoryId()).isEqualTo(1);
+    }
+
+    @Test
+    public void get_all_items_should_set_discount() {
+        assertThat(itemService.getItems().get(1).getDiscount()).isEqualTo(75);
+    }
+
+    @Test
+    public void get_all_items_should_set_promotions() {
+        assertThat(itemService.getItems().get(1).getPromotionList().size()).isEqualTo(3);
     }
 
     @Test
