@@ -41,4 +41,13 @@ public class PosTests {
         assertThat(pos.getCartItems().size()).isEqualTo(4);
         assertThat(pos.getCartItems().get(2).getItemName()).isEqualTo("电池");
     }
+
+    @Test
+    public void caculate_sum_price_test() {
+        pos.parseBarcode(barcodes);
+        pos.caculatePrice();
+        assertThat(pos.getSumPrice()).isEqualTo(69);
+    }
+
+    
 }
