@@ -1,6 +1,5 @@
 package com.thoughtworks.pos;
 
-import com.thoughtworks.pos.service.ItemService;
 import org.junit.Before;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
