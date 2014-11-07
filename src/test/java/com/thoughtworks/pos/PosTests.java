@@ -56,4 +56,12 @@ public class PosTests {
         double result = pos.getSumPrice();
         assertThat(result).isEqualTo(69);
     }
+
+    @Test
+    public void should_return_promotion_price() {
+        pos.parseBarcode(barcodes);
+        pos.caculatePrice();
+        double result = pos.getPromotionPrice();
+        assertThat(result).isEqualTo(11.75);
+    }
 }
