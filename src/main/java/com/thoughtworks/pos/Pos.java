@@ -30,6 +30,10 @@ public class Pos {
         this.itemService = itemService;
     }
 
+    public List<CartItem> getCartItems() {
+        return cartItems;
+    }
+
     public void parseBarcode(List<String> cartItemBarcodes) {
         for (String barcode : cartItemBarcodes) {
             String[] splitBarcode = barcode.split("-");
