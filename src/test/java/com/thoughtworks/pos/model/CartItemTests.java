@@ -10,7 +10,7 @@ import static org.fest.assertions.api.Assertions.assertThat;
 public class CartItemTests {
 
     @Test
-    public void caculate_promotion_test() {
+    public void caculate_cartItem_promotion_test() {
         List<Promotion> promotions = new ArrayList<>();
         promotions.add(new PromotionDiscount());
         promotions.add(new PromotionSecondHalf());
