@@ -5,6 +5,7 @@
     <artifactId>pos-java-spring</artifactId>
     <packaging>jar</packaging>
     <version>1.0-SNAPSHOT</version>
+
     <name>pos-java-spring</name>
     <url>http://maven.apache.org</url>
 
